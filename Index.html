@@ -7,45 +7,44 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
+      background: #f0f0f0;
       text-align: center;
-      color: #333;
-    }
-    header {
-      background-color: #222;
-      color: white;
-      padding: 20px 0;
+      padding: 30px;
     }
     h1 {
-      margin: 0;
+      color: #333;
     }
-    main {
-      margin: 40px auto;
-      max-width: 600px;
+    .chess-board {
+      display: grid;
+      grid-template-columns: repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px);
+      margin: 20px auto;
+      width: 400px;
+      border: 2px solid #333;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
+    .white {
+      background-color: #eee;
     }
-    a.button:hover {
-      background-color: #005fa3;
+    .black {
+      background-color: #444;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to Chess Masters</h1>
-  </header>
-  <main>
-    <p>Your place to play and master chess online.</p>
-    <a href="#" class="button">Start Playing</a>
-  </main>
+  <h1>♟ Welcome to Chess Masters ♟</h1>
+  <p>Website under construction. Play chess and earn glory!</p>
+  <div class="chess-board">
+    <!-- Генерира шахматна дъска -->
+    <script>
+      const board = document.querySelector('.chess-board');
+      for (let row = 0; row < 8; row++) {
+        for (let col = 0; col < 8; col++) {
+          const square = document.createElement('div');
+          square.className = (row + col) % 2 === 0 ? 'white' : 'black';
+          board.appendChild(square);
+        }
+      }
+    </script>
+  </div>
 </body>
 </html>
